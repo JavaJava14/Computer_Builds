@@ -5,5 +5,6 @@ class CreateBuilds < ActiveRecord::Migration[6.0]
       t.string :image
       t.text :specs
       t.integer :user_id
+    end
   end
 end

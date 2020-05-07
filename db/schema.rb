@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_053518) do
+ActiveRecord::Schema.define(version: 2020_05_07_060253) do
+
+  create_table "builds", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.text "specs"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
