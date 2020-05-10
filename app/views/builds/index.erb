@@ -1,0 +1,7 @@
+<h1>Builds</h1>
+
+<% @builds.each do |build| %>
+  <h2><%= build.title %></h2>
+  <p><%= build.specs %></p>
+  <img src="<%= build.image %>" alt="build">
+<% end %>
