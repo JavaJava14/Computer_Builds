@@ -1,4 +1,9 @@
 class BuildsController < ApplicationController
+
+  get '/builds/new' do
+    erb :'/builds/new'
+  end
+
   get '/builds' do
     @builds = Build.all
     erb :'builds/index'
