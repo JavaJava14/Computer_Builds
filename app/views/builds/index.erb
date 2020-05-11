@@ -2,6 +2,9 @@
 <a href="/builds/new">Share your Build</a>
 <% @builds.each do |build| %>
   <h2><%= build.title %></h2>
+  <a href="/builds/<%= build.id %>/edit">Edit</a>
   <p><%= build.specs %></p>
   <img src="<%= build.image %>" alt="build">
 <% end %>
+
+
