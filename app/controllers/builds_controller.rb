@@ -5,9 +5,8 @@ class BuildsController < ApplicationController
   end
 
   post '/builds' do
-    build = Build.new(params)
     if params[:title] != ""
-      build.save
+      @build = Build.create(params)
       redirect '/builds'
     else
       @error = "Please submit title and specs."
@@ -27,7 +26,19 @@ class BuildsController < ApplicationController
 
   get '/builds/:id/edit' do
     @build = Build.find(params[:id])
-    erb :'/builds/edit'
+    erb :'builds/edit'
   end
+
+  patch '/builds/:id' do
+    @build = Build.find(params[:id])
+    if params[:build][:title] != ""
+      @build.update(params[:build])
+      redirect "/builds/#{params[:id]}"
+    else
+      @error = "Please submit title and specs."
+      erb :'builds/edit'
+    end
+  end
+
 
 end
