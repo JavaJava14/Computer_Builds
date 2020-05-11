@@ -25,4 +25,9 @@ class BuildsController < ApplicationController
     erb :'builds/show'
   end
 
+  get '/builds/:id/edit' do
+    @build = Build.find(params[:id])
+    erb :'/builds/edit'
+  end
+
 end
